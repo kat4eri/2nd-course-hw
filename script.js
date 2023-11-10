@@ -1,77 +1,71 @@
-1.let number = [1, 5, 4, 10, 0, 3];
-for (let i = 0; i < number.length; i++) {
-    if (number[i] == 10) break;
-    console.log(number[i]);
-}
+1.let strJs = 'js';
+strJs = strJs.toUpperCase();
 
-2.let numbers = [1, 5, 4, 10, 0, 3]
-console.log(numbers.indexOf('4'));
+console.log(strJs);
 
-3.let num = [1, 3, 5, 10, 20]
-num = num.join(' ');
-console.log(num);
+2.const searchStart = (['Кот', 'Корова', 'Рыба', 'Оса']);
+const search = 'ко';
 
-4.let massive = [
-  [1, 1, 1],
-  [1, 1, 1],
-  [1, 1, 1],
-];
-console.log(Array(massive));
+searchStart.forEach((searchStart) => {
+    if (searchStart.toLowerCase().startsWith(search.toLowerCase())){
+        console.log(Array(searchStart));
+    }
+});
 
-5.const n = [1, 1, 1]
-n.push (2, 2, 2.)
-console.log(n);
+3.let number = 32.58884;
 
-6.const arr = [9, 8, 7, 'a', 6, 5];
-const numbs = arr.sort();
-numbs.pop();
-console.log(numbs);
+console.log(Math.floor(number));
+console.log(Math.ceil(number));
+console.log(Math.round(number));
 
-7.const arr = [9, 8, 7, 6, 5];
-let num = Number(prompt('Введите число от 1 до 10'));
+4.console.log(Math.max(52, 53, 49, 77, 21, 32));
+console.log(Math.min(52, 53, 49, 77, 21, 32));
 
-if (arr.includes(num)) {
-  console.log(`Число ${num} есть в массиве.`);
-} else {
-  console.log(`Числа ${num} нет в массиве.`);
-}
-
-8.const str = 'abcdef'; 
-const result = str.split('').reverse().join('')
-console.log(result);
-
-9.let type = [[1, 2, 3,],[4, 5, 6]];
-console.log(Array(type.join(',')));
-
-10.let arr = [3,7,8,4,5,1];
-
-for (let i = 0; i < arr.length - 1; i++) {
-    let sum = arr[i] + arr[i + 1]
-	console.log(sum);
-}
-
-11.let numb = [2, 4, 6, 8]
-let res = numb.map (function(elem) {
-  return elem ** 2;
-})
-console.log(res);
-
-12.const arr12 = ["слово", "", "слог", "длинное предложение", "буква"];
-
-const getLengthWords = function (arr) {
-  let lengthArr = arr.map(el => el.length);
-  return lengthArr;
+5.function getRandom(minValue, maxValue) {
+  return Math.round (Math.random() * (maxValue - minValue)) + minValue;
 };
 
-console.log(getLengthWords(arr12));
+console.log(getRandom(1, 10));
 
-13.function filterPositive(array) {
-  let negativeArr = [];
-  for (const value of array) {
-    if (value < 0) negativeArr.push(value);
-  };
-  return negativeArr;
-}
+6.let max = 10;
+let lenght = max / 2;
+const getRandomArrNumbers = (length, max) => (
+    [...new Array(length)]
+      .map(() => Math.round(Math.random() * max))
+  );
+const numbers = getRandomArrNumbers (lenght, max);
 
-console.log(filterPositive([-1, 0, 5, -10, 56]));
-console.log(filterPositive([-25, 25, 0, -1000, -2]));
+console.log(numbers);
+
+7.function getRandomNumber(minNum, maxNum) {
+  return Math.round (Math.random() * (maxNum - minNum)) + minNum;
+};
+
+console.log(getRandomNumber(3, 13));
+
+8.let nowDate = new Date();
+
+console.log(nowDate);
+
+9.let myDate = new Date();
+let searchDate = myDate.setDate(myDate.getDate() + 73);
+let daysIn73 = new Date(searchDate)
+console.log(daysIn73);
+
+10.const days = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+const months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь','Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+
+let newDate = new Date();
+let fullDate = 'Дата: ' + newDate.getDate() + ' ' + months[newDate.getMonth()] + ' ' + newDate.getFullYear() + '- это ' + days[newDate.getDay()];
+console.log(fullDate);
+
+let hour = newDate.getHours();
+let minute = newDate.getMinutes();
+let second = newDate.getSeconds();
+if (minute < 10) {
+	minute = '0' + minute;
+};
+if (second < 10) {
+	second = '0' + second;
+};
+console.log('Время: ' + hour + ':' + minute + ':' + second);
