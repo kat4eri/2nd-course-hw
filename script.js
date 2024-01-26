@@ -11,12 +11,16 @@ console.log(numbers.indexOf('4'));
 num = num.join(' ');
 console.log(num);
 
-4.let massive = [
-  [1, 1, 1],
-  [1, 1, 1],
-  [1, 1, 1],
-];
-console.log(Array(massive));
+4.let numbersMult = [];
+
+for (let x = 0; x < 3; x++) {
+    numbersMult[x] = [];
+    for (let y = 0; y < 3; y++) {
+        numbersMult[x][y] = 1;
+    }
+}
+
+console.log(numbersMult);
 
 5.const n = [1, 1, 1]
 n.push (2, 2, 2.)
@@ -40,8 +44,8 @@ if (arr.includes(num)) {
 const result = str.split('').reverse().join('')
 console.log(result);
 
-9.let type = [[1, 2, 3,],[4, 5, 6]];
-console.log(Array(type.join(',')));
+9.const arr = [[1, 2, 3,], [4, 5, 6]];
+console.log(arr.flat());
 
 10.let arr = [3,7,8,4,5,1];
 
